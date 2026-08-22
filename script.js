@@ -1,15 +1,15 @@
 // Current list of movies
 const movies = [
-    { name: "The Dark Knight", genre: "action", review: "A masterpiece of action and storytelling." },
-    { name: "Inception", genre: "sci-fi", review: "A mind-bending journey into dreams." },
-    { name: "The Godfather", genre: "drama", review: "An iconic tale of power and family." },
-    { name: "Superbad", genre: "comedy", review: "A hilarious coming-of-age story." },
-    { name: "Interstellar", genre: "sci-fi", review: "A visually stunning space epic." },
-    { name: "Pulp Fiction", genre: "drama", review: "A groundbreaking narrative masterpiece." },
-    { name: "Avengers: Endgame", genre: "action", review: "An epic conclusion to a decade-long saga." },
-    { name: "The Hangover", genre: "comedy", review: "A laugh-out-loud adventure." },
-    { name: "Forrest Gump", genre: "drama", review: "A heartwarming tale of life and love." },
-    { name: "Guardians of the Galaxy", genre: "sci-fi", review: "A fun and quirky space adventure." }
+    { name: "The Dark Knight", genre: "action", review: "A masterpiece of action and storytelling.", rating: 1.5 },
+    { name: "Inception", genre: "sci-fi", review: "A mind-bending journey into dreams.", rating: 2.5 },
+    { name: "The Godfather", genre: "drama", review: "An iconic tale of power and family.", rating: 3.5 },
+    { name: "Superbad", genre: "comedy", review: "A hilarious coming-of-age story.", rating: 4.5 },
+    { name: "Interstellar", genre: "sci-fi", review: "A visually stunning space epic.", rating: 4.9999 },
+    { name: "Pulp Fiction", genre: "drama", review: "A groundbreaking narrative masterpiece.", rating: 1 },
+    { name: "Avengers: Endgame", genre: "action", review: "An epic conclusion to a decade-long saga.", rating: 2 },
+    { name: "The Hangover", genre: "comedy", review: "A laugh-out-loud adventure.", rating: 3 },
+    { name: "Forrest Gump", genre: "drama", review: "A heartwarming tale of life and love.", rating: 4 },
+    { name: "Guardians of the Galaxy", genre: "sci-fi", review: "A fun and quirky space adventure.", rating: 5 }
 ];
 
 // DOM Elements
@@ -101,6 +101,7 @@ function displayMovie(movie) {
     // Step 3: Display the written movie review
     // Use `movie.review` to set the text content of the `movieReview` element.
 
+movieReview.textContent = `Review: ${movie.review}`;
 
     // Step 4: Add a numeric `rating` property to each movie object in the `movies` array.
     // Then use the `movie.rating` value to determine the descriptive rating:
@@ -110,12 +111,31 @@ function displayMovie(movie) {
     // - 4 to 5: "Excellent"
     // Write conditional logic (such as `if-elseif-else` or `switch`) to check the range and assign the appropriate description.
 
+var ratingText;
+switch(true) {
+case (movieRating.value < 1):
+ratingText = "error, illegal rating";
+break;
+case (movieRating.value >= 1 && movieRating.value < 2):
+ratingText = "Not Good";
+break;
+case (movieRating.value >=2 && movieRating.value < 3):
+ratingText = "Average";
+break;
+case (movieRating.value >=3 && movieRating.value < 4):
+ratingText = "Good";
+break;
+case (movieRating.value >=4 && movieRating.value <= 5):
+ratingText = "Excellent";
+break;
+}
 
     // Step 5: Display the review and descriptive rating
     // Use the written review to set the text content of the `movieReview` element.
     // Use the descriptive rating to set the text content of the `movieRating` element.
-    movieReview.textContent = "Review: TODO"; // change this
-    movieRating.textContent = "Rating: unknown"; // change this
+
+    movieReview.textContent = `Review: ${movie.review};
+    movieRating.textContent = `Rating: &{movie.rating}, ${ratingText};
 }
 
 // Function to clear the displayed movie
