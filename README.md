@@ -224,6 +224,9 @@ The starter code already shows where the movie name and genre should be displaye
 
 Pay close attention to the data in the `movies` array. Your display logic should use each movie object's written `review` property, and your new numeric `rating` property.
 
+![Result showing rating section](images/image1.png)
+
+
 ## Instructions
 1. Open `script.js`.
 2. Find each section marked with `//TODO`.
@@ -238,9 +241,14 @@ Pay close attention to the data in the `movies` array. Your display logic should
 Submit the following:
 
 1. A screenshot showing the dropdown filter and random movie feature working.
+![Random Movie result w/ Action genre](images/random.png)
 2. A screenshot showing the search functionality working.
+![Empty Search Attempt](images/image.png)
+![Search with lowercase 'avenger'](images/image1.png)
 3. A brief description of the changes you made.
+   I completed the search function, added ratings and made the display show ratings as well as the text version. 
 4. A link to your repository created from the template.
+https://github.com/ASLEECSUF/andrew-lee-lab-01
 
 **NOTE:** If you do not complete and submit the lab in class for in-person grading by the instructor, you are responsible for decorating and documenting your own `README.md` with screenshots that show completion and functionality.
 
