@@ -241,14 +241,22 @@ Pay close attention to the data in the `movies` array. Your display logic should
 Submit the following:
 
 1. A screenshot showing the dropdown filter and random movie feature working.
+
+Random Movie w/ Action genre selected:
 ![Random Movie result w/ Action genre](images/random.png)
 2. A screenshot showing the search functionality working.
+
+Empty search attempt and "avenger" search results
 ![Empty Search Attempt](images/image.png)
 ![Search with lowercase 'avenger'](images/image1.png)
 3. A brief description of the changes you made.
-   I completed the search function, added ratings and made the display show ratings as well as the text version. 
+
+   I completed the search function, added ratings to the movie array, and made displayMovie() show numerical ratings as well as text ratings. 
+
 4. A link to your repository created from the template.
+
 https://github.com/ASLEECSUF/andrew-lee-lab-01
+
 
 **NOTE:** If you do not complete and submit the lab in class for in-person grading by the instructor, you are responsible for decorating and documenting your own `README.md` with screenshots that show completion and functionality.
 
