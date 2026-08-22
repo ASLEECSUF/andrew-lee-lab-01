@@ -53,7 +53,7 @@ function searchMovie() {
     // Use the `searchInput` DOM element to get the value entered by the user.
     // Make sure to trim any extra spaces and convert the term to lowercase for case-insensitive matching.
 
-const searchName = searchInput.value.trim.toLowerCase();
+const searchName = searchInput.value.trim().toLowerCase();
 
 
     // Step 2: Check if the search term is empty
@@ -62,6 +62,7 @@ const searchName = searchInput.value.trim.toLowerCase();
 
 if(searchName === "") {
 alert("Input movie name!");
+return;
 }
 
 
@@ -113,19 +114,19 @@ movieReview.textContent = `Review: ${movie.review}`;
 
 var ratingText;
 switch(true) {
-case (movieRating.value < 1):
+case (movie.rating < 1 || movie.rating > 5):
 ratingText = "error, illegal rating";
 break;
-case (movieRating.value >= 1 && movieRating.value < 2):
+case (movie.rating >= 1 && movie.rating < 2):
 ratingText = "Not Good";
 break;
-case (movieRating.value >=2 && movieRating.value < 3):
+case (movie.rating >=2 && movie.rating < 3):
 ratingText = "Average";
 break;
-case (movieRating.value >=3 && movieRating.value < 4):
+case (movie.rating >=3 && movie.rating < 4):
 ratingText = "Good";
 break;
-case (movieRating.value >=4 && movieRating.value <= 5):
+case (movie.rating >=4 && movie.rating <= 5):
 ratingText = "Excellent";
 break;
 }
@@ -134,8 +135,8 @@ break;
     // Use the written review to set the text content of the `movieReview` element.
     // Use the descriptive rating to set the text content of the `movieRating` element.
 
-    movieReview.textContent = `Review: ${movie.review};
-    movieRating.textContent = `Rating: &{movie.rating}, ${ratingText};
+    movieReview.textContent = `Review: ${movie.review}`; // is this necessary? we do this in step 3 dont we?
+    movieRating.textContent = `Rating: ${movie.rating}, ${ratingText}`;
 }
 
 // Function to clear the displayed movie
