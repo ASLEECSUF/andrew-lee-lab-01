@@ -53,15 +53,24 @@ function searchMovie() {
     // Use the `searchInput` DOM element to get the value entered by the user.
     // Make sure to trim any extra spaces and convert the term to lowercase for case-insensitive matching.
 
+const searchName = searchInput.value.trim.toLowerCase();
+
 
     // Step 2: Check if the search term is empty
     // If the user hasn't entered anything, display an alert to prompt them to input a movie name.
     // You can use `alert()` for this.
 
+if(searchName === "") {
+alert("Input movie name!");
+}
+
 
     // Step 3: Search for a movie in the `movies` array
     // Use the `find()` method to check if any movie name includes the search term.
     // Make sure to convert the movie name to lowercase before comparing.
+
+const foundMovie = movies.find(movie => movie.name.toLowerCase().includes(searchName));
+
 
 
     // Step 4: Display the found movie or show a "not found" message
@@ -69,7 +78,14 @@ function searchMovie() {
     // Otherwise, update the `movieName`, `movieGenre`, `movieReview`, and `movieRating`
     // DOM elements to show a message like "No movie found with that name."
 
-    alert("This feature is not implemented yet.");
+if (!foundMovie) {
+movieName.textContent = "not found";
+movieGenre.textContent = "";
+movieReview.textContent = "";
+movieRating.textContent = "";
+} else {
+displayMovie(foundMovie);
+}
 }
 
 // TODO: Function to display a movie
